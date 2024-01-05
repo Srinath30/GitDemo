@@ -11,6 +11,7 @@ public class JdbcConnection {
         String port = "3306";
         Connection conn = DriverManager.getConnection("jdbc:mysql://" + host + ":" + port + "/qadbt","root","1998");
         Statement s = conn.createStatement();
+        System.out.println(s);
         ResultSet rs = s.executeQuery("select * from credentials where scenario = 'rewardscard'");
         while(rs.next()){
             WebDriver driver = new ChromeDriver();
